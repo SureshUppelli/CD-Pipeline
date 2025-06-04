@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: bankapp-ingress
+  name: wetaskeraws-ingress
   namespace: webapps
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -12,16 +12,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - www.capstonebankapp.com
-    secretName: bankapp-tls-secret
+    - testcloud.wetasker.com
+    secretName: wetaskeraws-tls-secret
   rules:
-  - host: www.capstonebankapp.com
+  - host: testcloud.wetasker.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: bankapp-service
+            name: wetaskeraws-service
             port:
               number: 80
