@@ -9,11 +9,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - edu-test.wetasker.com
-    - www.edu-test.wetasker.com
+    - edu-test-api.wetasker.com
+    - www.edu-test-api.wetasker.com
     secretName: edutrack-api-app-tls
   rules:
-  - host: edu-test.wetasker.com
+  - host: edu-test-api.wetasker.com
     http:
       paths:
       - path: /
@@ -23,7 +23,7 @@ spec:
             name: edutrack-api-app-service
             port:
               number: 80
-  - host: www.edu-test.wetasker.com
+  - host: www.edu-test-api.wetasker.com
     http:
       paths:
       - path: /
