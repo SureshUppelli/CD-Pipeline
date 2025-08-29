@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edutrack-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: edutrack-app
+  template:
+    metadata:
+      labels:
+        app: edutrack-app
+    spec:
+      containers:
+        - name: edutrack-app
+          image: 938964965021.dkr.ecr.us-west-1.amazonaws.com/eduiv-app:latest
+          ports:
+            - containerPort: 5000
