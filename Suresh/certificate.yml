@@ -5,9 +5,10 @@ metadata:
   namespace: default
 spec:
   secretName: node-app-tls
-  renewBefore: 360h # Renew 15 days before expiry
+  renewBefore: 360h
   dnsNames:
   - testcloud.wetasker.com
+  - www.testcloud.wetasker.com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

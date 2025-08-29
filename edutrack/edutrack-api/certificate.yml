@@ -1,14 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: edutrack-app-tls
+  name: edutrack-api-app-tls
   namespace: default
 spec:
-  secretName: edutrack-app-tls
+  secretName: edutrack-api-app-tls
   renewBefore: 360h
   dnsNames:
-  - edu-test.wetasker.com
-  - www.edu-test.wetasker.com
+  - edu-test-api.wetasker.com
+  - www.edu-test-api.wetasker.com
   issuerRef:
-    name: letsencrypt-prod-edutrack
+    name: letsencrypt-prod-edutrack-api
     kind: ClusterIssuer

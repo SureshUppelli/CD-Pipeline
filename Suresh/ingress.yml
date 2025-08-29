@@ -10,9 +10,20 @@ spec:
   tls:
   - hosts:
     - testcloud.wetasker.com
+    - www.testcloud.wetasker.com
     secretName: node-app-tls
   rules:
   - host: testcloud.wetasker.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: node-app-service
+            port:
+              number: 80
+  - host: www.testcloud.wetasker.com
     http:
       paths:
       - path: /

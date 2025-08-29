@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod-edutrack
+  name: letsencrypt-prod-edutrack-api
 spec:
   acme:
     email: suresh.uppapalli@novisync.com
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-prod-edutrack
+      name: letsencrypt-prod-edutrack-api
     solvers:
     - http01:
         ingress:

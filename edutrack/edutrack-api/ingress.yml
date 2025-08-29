@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: edutrack-app-ingress
+  name: edutrack-api-app-ingress
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod-edutrack"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod-edutrack-api"
 spec:
   tls:
   - hosts:
     - edu-test.wetasker.com
     - www.edu-test.wetasker.com
-    secretName: edutrack-app-tls
+    secretName: edutrack-api-app-tls
   rules:
   - host: edu-test.wetasker.com
     http:
@@ -20,7 +20,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: edutrack-app-service
+            name: edutrack-api-app-service
             port:
               number: 80
   - host: www.edu-test.wetasker.com
@@ -30,6 +30,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: edutrack-app-service
+            name: edutrack-api-app-service
             port:
               number: 80
